@@ -1,0 +1,126 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "hello rohan",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "CaptureBirthDayIntent",
+          "slots": [
+            {
+              "name": "month",
+              "type": "AMAZON.Month",
+              "samples": [
+                "{month}"
+              ]
+            },
+            {
+              "name": "day",
+              "type": "AMAZON.Ordinal",
+              "samples": [
+                "{day}"
+              ]
+            },
+            {
+              "name": "year",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "samples": [
+                "{year}"
+              ]
+            }
+          ],
+          "samples": [
+            "{day} {month} {year}",
+            "{month} {day}",
+            "I was born on {month} {day} {year}"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "CaptureBirthDayIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "month",
+              "type": "AMAZON.Month",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.984078010594.107492176360"
+              }
+            },
+            {
+              "name": "day",
+              "type": "AMAZON.Ordinal",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.984078010594.541320433940"
+              }
+            },
+            {
+              "name": "year",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.984078010594.997481963480"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.984078010594.107492176360",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What month were you born in?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.984078010594.541320433940",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What day were you born on?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.984078010594.997481963480",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What year were you born on?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "3"
+}
